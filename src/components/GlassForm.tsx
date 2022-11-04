@@ -99,11 +99,12 @@ function GlassForm({ setters, buttonText, click = "Click" }: formProps) {
                     }} style={{
                         width: "120px",
                         height: "40px",
-                        backgroundColor: "#010e2c",
+                        backgroundColor: "rgba(0, 0, 0, 0.3)",
                         border: "none",
                         borderRadius: "10px",
                         boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
                         cursor: "pointer",
+
                     }} type="submit"><p style={{
                         color: "#d2d2d2",
                         margin: "0px",

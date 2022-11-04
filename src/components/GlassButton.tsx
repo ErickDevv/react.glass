@@ -4,11 +4,10 @@ export interface GlassButtonProps {
 }
 
 const GlassButton = ({ style, icon }: GlassButtonProps) => {
-    //add height prop to style
     const newStyle = {
         width: "100px",
         height: "100px",
-        backgroundColor: "linal-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
         backdropFilter: "blur(10px)",
         borderRadius: "20%",
         border: "none",
@@ -16,13 +15,17 @@ const GlassButton = ({ style, icon }: GlassButtonProps) => {
         color: "white",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center", ...style
-
+        alignItems: "center", ...style,
+        cursor: "pointer",
     }
 
-    return <div style={
-        newStyle
-    } className="glassGlassButton">{icon}</div>
+    return <>
+
+        <button style={
+            newStyle
+        } className="glassGlassButton">{icon}</button>
+
+    </>
 }
 
 export { GlassButton }
