@@ -1,3 +1,5 @@
+**BY DEVS FOR DEVS**
+
 <div align="center">
   <h1>React Glass<h1/>
   <img src="ReactGlass.png" alt="alt text" width="200"/>
