@@ -41,3 +41,14 @@ We declare our component and pass the setters as props, which are those function
     setFirstInput("")
 }} buttonText="Submit "></GlassForm>
 ```
+
+## GlassButton:
+
+We import our component:
+  
+```js
+import { GlassButton } from 'react.glass'
+```
+```js
+<GlassButton style={{ marginRight: "10px", marginLeft: "10px" }} icon={'i'm a button'} />
+```
