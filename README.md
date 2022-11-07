@@ -49,6 +49,11 @@ We import our component:
 ```js
 import { GlassButton } from 'react.glass'
 ```
+
+   <br/>
+   
+Now we declare our component and pass it the style prop that will carry the additional styles of the button along with the icon prop that contains the icon or text it will have.
+
 ```js
 <GlassButton style={{ marginRight: "10px", marginLeft: "10px" }} icon={'i'm a button'} />
 ```
