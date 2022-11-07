@@ -1,6 +1,6 @@
 export interface GlassButtonProps {
     style?: React.CSSProperties
-    icon?: React.ReactNode | string
+    icon?: React.ReactNode | string | null
 }
 
 const GlassButton = ({ style, icon }: GlassButtonProps) => {
@@ -23,7 +23,7 @@ const GlassButton = ({ style, icon }: GlassButtonProps) => {
 
         <button style={
             newStyle
-        } className="glassGlassButton">{icon}</button>
+        } className="glassGlassButton">{icon ? null : "Default"}</button>
 
     </>
 }
