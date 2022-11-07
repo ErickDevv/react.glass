@@ -25,3 +25,19 @@ const changeFirstInput = (e: any) => {
   setFirstInput(e.target.value)
 }
 ```
+  <br/>
+  
+Now we should have our component imported:
+  
+```js
+import { GlassForm } from 'react.glass'
+```
+   <br/>
+  
+We declare our component and pass the setters as props, which are those functions that will be called when making changes to the inputs, we also have the click prop that receives a function that will be called when submitting the form, and finally we have buttonText that receives the text which will have the submit button.
+  
+```js
+<GlassForm setters={[changeFirstInput, changeSecondInput]} click={() => {
+    setFirstInput("")
+}} buttonText="Submit "></GlassForm>
+```
