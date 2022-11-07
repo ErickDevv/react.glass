@@ -9,4 +9,12 @@
   
 </div>
 
+## Install:
+```console
+yarn add https://github.com/ErickDevv/react.glass
+```
 
+
+## GlassForm:
+```
+```
