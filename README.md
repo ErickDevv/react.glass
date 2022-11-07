@@ -1,1 +1,1 @@
-# react.glass
+# React Glass
