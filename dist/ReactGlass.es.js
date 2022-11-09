@@ -2039,8 +2039,8 @@ Check the top-level render call using <` + c + ">.");
 })(hr);
 const Wr = hr.exports.Fragment, le = hr.exports.jsx, yt = hr.exports.jsxs, Ht = ({
   style: O,
-  icon: v,
-  click: Q
+  click: v,
+  icon: Q
 }) => {
   const j = {
     width: "100px",
@@ -2059,10 +2059,10 @@ const Wr = hr.exports.Fragment, le = hr.exports.jsx, yt = hr.exports.jsxs, Ht = 
   };
   return /* @__PURE__ */ le(Wr, {
     children: /* @__PURE__ */ le("button", {
-      onClick: () => Q(),
+      onClick: () => v(),
       style: j,
       className: "glassGlassButton",
-      children: v ? null : "Default"
+      children: Q ? null : "Default"
     })
   });
 }, Gt = (O, v) => /* @__PURE__ */ le(Wr, {
