@@ -1,9 +1,10 @@
 export interface GlassButtonProps {
     style?: React.CSSProperties
     icon?: React.ReactNode | string | null
+    click?: any
 }
 
-const GlassButton = ({ style, icon }: GlassButtonProps) => {
+const GlassButton = ({ style, icon, click }: GlassButtonProps) => {
     const newStyle = {
         width: "100px",
         height: "100px",
@@ -21,7 +22,7 @@ const GlassButton = ({ style, icon }: GlassButtonProps) => {
 
     return <>
 
-        <button style={
+        <button onClick={()=>click()} style={
             newStyle
         } className="glassGlassButton">{icon ? null : "Default"}</button>
 
