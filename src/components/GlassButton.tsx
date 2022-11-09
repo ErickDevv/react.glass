@@ -1,8 +1,7 @@
 export interface GlassButtonProps {
     style?: React.CSSProperties
     icon?: React.ReactNode | string | null
-    //add click prop this is and event for the button
-    click: Function
+    click?: any
 }
 
 const GlassButton = ({ style, icon, click}: GlassButtonProps) => {
@@ -25,7 +24,7 @@ const GlassButton = ({ style, icon, click}: GlassButtonProps) => {
 
         <button style={
             newStyle
-        } className="glassGlassButton" onClick={()=>{click();}}>{icon ? null : "Default"}</button>
+        } className="glassGlassButton" onClick={()=>{click();}}>{icon}</button>
 
     </>
 }
