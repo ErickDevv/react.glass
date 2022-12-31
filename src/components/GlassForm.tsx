@@ -1,12 +1,13 @@
-const Input = (changeFunction: any, id: string) => {
+import Params from "../types/GlassFormParams"
 
-    //changeFunction(e.target.value)
+//@ts-ignore
+import ReactGlass from "../assets/ReactGlass.png"
 
+const Input = ({ type, placeholder, changeFunction }: any) => {
     return (
-        <>
-            {/* create an imput with a red placeholder color style */}
 
-            <input className={"GlassFormInput"} onChange={(e) => { changeFunction.changeFunction(e) }} placeholder="..." type="text" style={{
+        <>
+            <input className={"GlassFormInput"} type={type} placeholder={placeholder} onChange={(e) => { changeFunction(e) }} style={{
                 width: "350px",
                 height: "50px",
                 backdropFilter: "blur(10px)",
@@ -26,21 +27,14 @@ const Input = (changeFunction: any, id: string) => {
     )
 }
 
-export interface formProps {
-    setters: any
-    click: any
-    buttonText: string
-}
 
-/*{            <button onClick={() => setters[0]("data")}>Button</button>
-}            */
+const GlassForm = ({ Form, Inputs }: Params) => {
 
-function GlassForm({ setters, buttonText, click = "Click" }: formProps) {
     return (
         <>
             <form onSubmit={e => { e.preventDefault(); }} style={{
-                minWidth: "400px",
-                minHeight: "200px",
+                maxWidth: "400px",
+                height: "400px",
                 backgroundColor: "linal-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)",
                 backdropFilter: "blur(10px)",
                 borderRadius: "2%",
@@ -61,10 +55,11 @@ function GlassForm({ setters, buttonText, click = "Click" }: formProps) {
                 }}>
                     <h3 style={{
                         margin: "0px",
-                        marginBottom: "2px",
+                        marginBottom: "3px",
                         fontSize: "28px",
+                        fontFamily: "sans-serif",
                     }}>
-                        REACT.GLASS FORM
+                        {Form.title}
                     </h3>
                     <div style={{
                         backgroundColor: "white",
@@ -76,11 +71,21 @@ function GlassForm({ setters, buttonText, click = "Click" }: formProps) {
                 </div>
                 {
                     function () {
-                        let persons = []
-                        for (let i = 0; i < setters.length; i++) {
-                            persons.push(<Input changeFunction={setters[i]}></Input>)
+                        let inputArr = []
+                        for (let i = 0; i < Inputs.length; i++) {
+
+                            inputArr.push(<h3 style={{
+                                margin: "0px",
+                                marginBottom: "3px",
+                                fontSize: "24px",
+                                fontFamily: "sans-serif",
+                            }}>
+                                {Inputs[i].label}
+                            </h3>)
+
+                            inputArr.push(<Input changeFunction={Inputs[i].changeFunction} type={Inputs[i].type} />)
                         }
-                        return persons
+                        return inputArr
                     }()}
                 <div style={{
                     width: "350px",
@@ -91,14 +96,13 @@ function GlassForm({ setters, buttonText, click = "Click" }: formProps) {
                     marginBottom: "20px",
                 }}>
                     <button onClick={() => {
-                        click()
-                        for (let i = 0; i < setters.length; i++) {
-                            //@ts-ignore
-                            document.getElementsByClassName("GlassFormInput")[i].value = ""
+                        Form.submitFunction();
+                        for (let i = 0; i < document.getElementsByClassName("GlassFormInput").length; i++) {
+                            (document.getElementsByClassName("GlassFormInput")[i] as HTMLInputElement).value = "";
                         }
                     }} style={{
-                        width: "120px",
-                        height: "40px",
+                        width: "180px",
+                        height: "50px",
                         backgroundColor: "rgba(0, 0, 0, 0.3)",
                         border: "none",
                         borderRadius: "10px",
@@ -109,16 +113,31 @@ function GlassForm({ setters, buttonText, click = "Click" }: formProps) {
                         color: "#d2d2d2",
                         margin: "0px",
                         padding: "0px",
-                        fontSize: "18px",
+                        fontSize: "24px",
                         fontFamily: " system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
                         letterSpacing: "1px",
                         fontWeight: "bold",
-                    }}>{buttonText}</p></button>
+                    }}>{Form.buttonText}</p></button>
                 </div>
             </form>
-
+            <div style={{
+                width: "400px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "grey",
+                marginTop: "5px",
+                marginBottom: "5px",
+                fontFamily: "sans-serif",
+                fontSize: "10px",
+            }}>
+                <h2>Created with <a href="https://github.com/ErickDevv/react.glass" target="_blank" >React.Glass</a></h2>
+                <img src={ReactGlass} style={{
+                    width: "50px",
+                    height: "50px",
+                }} />
+            </div>
         </>
-
     )
 }
 

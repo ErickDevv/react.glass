@@ -15,7 +15,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
+    
   },
   "include": ["src", "test/GlassButton.test.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
+
 }
