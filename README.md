@@ -1,6 +1,6 @@
-  <div style="justify-content: center; align-items: center; display: flex;">
-    <h1>React.Glass</h1>
-    <img src="ReactGlass.png" alt="alt text" width="60" height="60" style="margin-bottom: 30px;">
+  <div align="center">
+    <h1>React.Glass
+    <img src="ReactGlass.png" alt="alt text" width="60" height="60">
   </div>
 <div align="center">
   <h3>
